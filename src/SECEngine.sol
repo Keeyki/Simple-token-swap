@@ -32,6 +32,7 @@ contract DSCEngine is ReetrancyGuard {
     ///////////////////////
 
     mapping(address => address) private s_PriceFeeds;
+    mapping(address user => mapping(address token => uint256 amount));
     decentralizeStableCoin private immutable i_sec;
 
     /////////////////////
@@ -84,6 +85,8 @@ contract DSCEngine is ReetrancyGuard {
     {
         ///@param tokenCollateralAddress The address of the token to deposit as collateral
         ///@param amountCollateral The amount of collateral to deposit
+
+        s_collateralDeposited[msg.sender[]]
     }
 
     function redeemCollateralForSEC() external {}
